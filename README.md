@@ -14,6 +14,12 @@ Selamat datang di repositori lomba Aplikasi HTML5 BlankOn.
 # Pendaftaran
 Pendaftaran dibuka dari 5 Februari 2014 s.d. 12 Februari 2014 di[sini](https://docs.google.com/forms/d/11cuv02e7ZO98_yySpx0jccEBCGzYTVCR648DXQb6GY8/viewform)
 
+# Hadiah
+
+######1 Unit Laptop Thinkpad
+
+[![Hadiah Lomba 1 Unit Laptop](https://lh6.googleusercontent.com/-CADybKB2Nr8/VO3ew51NJCI/AAAAAAAAEew/zRH52AM_O-E/w759-h569-no/2015-02-25.jpg)] 
+
 # Peserta
 
 | No | Nama Peserta |
