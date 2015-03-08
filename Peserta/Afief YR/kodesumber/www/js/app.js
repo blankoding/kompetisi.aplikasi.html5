@@ -1,8 +1,14 @@
+
 var App = function() {
 
 	var pages = $(".pages");
+	var header = new Header($("#header"));
+	var sideMenu = new SideMenu($("#sidemenu"));
+
 	var pageLogin = new PageLogin($("#pagelogin"));
 	var pageMenu = new PageMenu($("#pagemenu"));
+	var pagePasienBaru = new PagePasienBaru($("#pagepasienbaru"));
+	var pageSetting = new PageSetting($("#pagesetting"));
 
 	pages.hide();
 
@@ -14,15 +20,37 @@ var App = function() {
 				pageLogin.show();
 			} else {
 				//user logged in
-				onLogin();
+				showMenu();
 			}
 		});
 	}
 	function bindingEvents() {
-		pageLogin.events.on("login", onLogin);
+		header.events.on("menuclick", showSideMenu);
+		pageLogin.events.on("login", showMenu);
+		pageMenu.events.on("pasienbaru", showPasienBaru)
+		pageMenu.events.on("pengaturan", showPengaturan);
+		pageSetting.events.on("logout", showLogin);
 	}
-	function onLogin() {
+	function showSideMenu() {
+		sideMenu.showHide();
+	}
+
+	function showLogin() {
+		pages.hide();
+		pageLogin.show();
+	}
+	function showMenu() {
 		pages.hide();
 		pageMenu.show();
+	}
+	function showPasienBaru() {
+		pages.hide();
+		header.show("Pasien Baru", "plus");
+		pagePasienBaru.show();
+	}
+	function showPengaturan() {
+		pages.hide();
+		header.show("Pengaturan", "gear");
+		pageSetting.show();
 	}
 }

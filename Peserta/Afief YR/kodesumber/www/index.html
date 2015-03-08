@@ -20,8 +20,11 @@
 
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/pages/header.js"></script>
+    <script type="text/javascript" src="js/pages/sidemenu.js"></script>
     <script type="text/javascript" src="js/pages/login.js"></script>
     <script type="text/javascript" src="js/pages/menu.js"></script>
+    <script type="text/javascript" src="js/pages/pasienbaru.js"></script>
+    <script type="text/javascript" src="js/pages/setting.js"></script>
 
     <script type="text/javascript" src="js/index.js"></script>
 </head>
@@ -32,13 +35,45 @@
                 <li class="fa fa-star"></li>
             </div>
             <h1>Header</h1>
-            <div class="iconmenu">
+            <div class="iconmenu semibutton">
                 <li class="fa fa-bars"></li>
             </div>
         </header><!-- /header -->
 
+        <div class="sidemenu verticalmenu" id="sidemenu">
+            <ul>
+                <li class="pasienbaru">
+                    <div class="icon"><i class="fa fa-user-plus"></i></div>
+                    <div class="text">Pasien Baru</div>
+                </li>
+                <li>
+                    <div class="icon"><i class="fa fa-search"></i></div>
+                    <div class="text">Cari Pasien</div>
+                </li>
+                &nbsp;
+                <li class="laporan">
+                    <div class="icon"><i class="fa fa-table"></i></div>
+                    <div class="text">Laporan</div>
+                </li>
+                <li class="datalain">
+                    <div class="icon"><i class="fa fa-database"></i></div>
+                    <div class="text">Data Lain</div>
+                </li>
+                &nbsp;
+                <li class="pengaturan">
+                    <div class="icon"><i class="fa fa-gear"></i></div>
+                    <div class="text">Pengaturan</div>
+                </li>
+            </ul>
+        </div>
+
         <div class="pages" id="pagelogin">
             <div class="content">
+                <div class="biglogo">
+                    <img src="img/logo.png">
+                </div>
+
+                <h2>Login</h2>
                 <form action="#" method="post" class="formstyle" accept-charset="utf-8">
                     <input type="text" name="username" class="username" value="" placeholder="Username">
                     <input type="password" name="password" class="password" value="" placeholder="Password">
@@ -46,12 +81,95 @@
                     <button type="submit" class="button kanan">Login</button>
                 </form>
             </div>
-        </div>
+        </div> <!-- /pages -->
+
         <div class="pages" id="pagemenu">
             <div class="content">
-                menu
+                <div class="biglogo">
+                    <img src="img/logo.png">
+                </div>
+                <div class="verticalmenu utama">
+                    <ul>
+                        <li class="pasienbaru">
+                            <div class="icon"><i class="fa fa-user-plus"></i></div>
+                            <div class="text">Pasien Baru</div>
+                        </li>
+                        <li>
+                            <div class="icon"><i class="fa fa-search"></i></div>
+                            <div class="text">Cari Pasien</div>
+                        </li>
+                        &nbsp;
+                        <li class="laporan">
+                            <div class="icon"><i class="fa fa-table"></i></div>
+                            <div class="text">Laporan</div>
+                        </li>
+                        <li class="datalain">
+                            <div class="icon"><i class="fa fa-database"></i></div>
+                            <div class="text">Data Lain</div>
+                        </li>
+                        &nbsp;
+                        <li class="pengaturan">
+                            <div class="icon"><i class="fa fa-gear"></i></div>
+                            <div class="text">Pengaturan</div>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
+        </div> <!-- /pages -->
+
+        <!-- Pasien Baru -->
+        <div class="pages" id="pagepasienbaru">
+            <div class="content">
+                <form action="#" method="post" class="formstyle" accept-charset="utf-8">
+                    <label>Nomor Rekam Medis</label>
+                    <input type="text" name="nomormedis" class="nomormedis" value="" placeholder="Nomor Rekam Medis">
+
+                    <label>Nama Lengkap</label>
+                    <input type="text" name="namalengkap" class="namalengkap" value="" placeholder="Nama Lengkap">
+
+                    <label>Jenis Kelamin</label>
+                    <select name="jeniskelamin" class="jeniskelamin">
+                        <option value="pria">Pria</option>
+                        <option value="wanita">Wanita</option>
+                    </select>
+
+                    <label>Tanggal Lahir</label>
+                    <input type="date" name="tanggallahir" class="tanggallahir">
+
+                    <label>Umur (Tahun)</label>
+                    <input type="number" name="umur" class="umur" value="0">
+
+                    <label>Alamat Rumah</label>
+                    <textarea name="alamatrumah" class="alamatrumah" placeholder="Alamat Rumah"></textarea>
+
+                    <label>Kota</label>
+                    <input type="text" name="kota" class="kota" placeholder="Kota">
+
+                    <label>No. Telp Rumah</label>
+                    <input type="text" name="norumah" class="norumah" placeholder="Telepon Rumah">
+
+                    <label>No. Handphone</label>
+                    <input type="text" name="nohape" class="nohape" placeholder="Handphone">
+
+                    <button type="submit" class="button kanan">Tambah</button>
+                </form>
+            </div>
+        </div> <!-- /pages -->
+        
+        <!-- Pengaturan -->
+        <div class="pages" id="pagesetting">
+            <div class="content">
+                <div class="verticalmenu utama">
+                    <ul>
+                        <li class="logout">
+                            <div class="icon"><i class="fa fa-sign-out"></i></div>
+                            <div class="text">Logout</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div> <!-- /pages -->
+
     </div>
 </body>
 </html>
