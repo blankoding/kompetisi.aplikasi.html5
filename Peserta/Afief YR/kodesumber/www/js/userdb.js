@@ -104,5 +104,25 @@ var UserDB = function() {
 			error: failed
 		});
 	}
+
+
+	//medis
+	this.tambahPasien = function(data, callback) {
+		data.key = ini.key;
+
+		ini.query("pasien/tambah", data,
+		function(data) {
+			console.log("tambah pasien", data);
+			if (data.status) {
+				callback(true);
+			} else {
+				callback(false);
+			}
+		},
+		function(err) {
+			callback(false);
+		}
+		);
+	}
 }
 var user = new UserDB();
