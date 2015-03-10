@@ -116,11 +116,11 @@ var UserDB = function() {
 			if (data.status) {
 				callback(true);
 			} else {
-				callback(false);
+				callback(false, data.message);
 			}
 		},
 		function(err) {
-			callback(false);
+			callback(false, data.message);
 		}
 		);
 	}

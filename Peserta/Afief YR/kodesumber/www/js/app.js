@@ -1,9 +1,9 @@
-
 var App = function() {
 
 	var pages = $(".pages");
 	var header = new Header($("#header"));
 	var sideMenu = new SideMenu($("#sidemenu"));
+	var popup = new Popup($("#popup"));
 
 	var pageLogin = new PageLogin($("#pagelogin"));
 	var pageMenu = new PageMenu($("#pagemenu"));

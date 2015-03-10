@@ -21,6 +21,7 @@
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/pages/header.js"></script>
     <script type="text/javascript" src="js/pages/sidemenu.js"></script>
+    <script type="text/javascript" src="js/pages/popup.js"></script>
     <script type="text/javascript" src="js/pages/login.js"></script>
     <script type="text/javascript" src="js/pages/menu.js"></script>
     <script type="text/javascript" src="js/pages/pasienbaru.js"></script>
@@ -39,6 +40,20 @@
                 <li class="fa fa-bars"></li>
             </div>
         </header><!-- /header -->
+
+        <div class="popup" id="popup">
+            <div class="alert">
+                <div class="header">
+                    Menu
+                </div>
+                <div class="content">
+                    Data tidak lengkap.
+                </div>
+                <div class="buttons">
+                    <div class="button tutup">Tutup</div>
+                </div>
+            </div>
+        </div>
 
         <div class="sidemenu verticalmenu" id="sidemenu">
             <ul>
@@ -81,7 +96,7 @@
                     <button type="submit" class="button kanan">Login</button>
                 </form>
             </div>
-        </div> <!-- /pages -->
+        </div> <!-- /pages pagelogin -->
 
         <div class="pages" id="pagemenu">
             <div class="content">
@@ -115,7 +130,7 @@
                     </ul>
                 </div>
             </div>
-        </div> <!-- /pages -->
+        </div> <!-- /pages pagemenu -->
 
         <!-- Pasien Baru -->
         <div class="pages" id="pagepasienbaru">
@@ -154,7 +169,7 @@
                     <button type="submit" class="button kanan">Tambah</button>
                 </form>
             </div>
-        </div> <!-- /pages -->
+        </div> <!-- /pages pagepasienbaru -->
         
         <!-- Pengaturan -->
         <div class="pages" id="pagesetting">
@@ -168,7 +183,7 @@
                     </ul>
                 </div>
             </div>
-        </div> <!-- /pages -->
+        </div> <!-- /pages pagesetting -->
 
     </div>
 </body>
