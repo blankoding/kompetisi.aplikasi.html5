@@ -24,6 +24,7 @@
     <script type="text/javascript" src="js/pages/popup.js"></script>
     <script type="text/javascript" src="js/pages/login.js"></script>
     <script type="text/javascript" src="js/pages/menu.js"></script>
+    <script type="text/javascript" src="js/pages/pasien.js"></script>
     <script type="text/javascript" src="js/pages/pasienbaru.js"></script>
     <script type="text/javascript" src="js/pages/setting.js"></script>
 
@@ -50,7 +51,7 @@
                     Data tidak lengkap.
                 </div>
                 <div class="buttons">
-                    <div class="button tutup">Tutup</div>
+                    <button class="button tutup">Tutup</button>
                 </div>
             </div>
         </div>
@@ -61,7 +62,7 @@
                     <div class="icon"><i class="fa fa-user-plus"></i></div>
                     <div class="text">Pasien Baru</div>
                 </li>
-                <li>
+                <li class="caripasien">
                     <div class="icon"><i class="fa fa-search"></i></div>
                     <div class="text">Cari Pasien</div>
                 </li>
@@ -109,7 +110,7 @@
                             <div class="icon"><i class="fa fa-user-plus"></i></div>
                             <div class="text">Pasien Baru</div>
                         </li>
-                        <li>
+                        <li class="caripasien">
                             <div class="icon"><i class="fa fa-search"></i></div>
                             <div class="text">Cari Pasien</div>
                         </li>
@@ -160,13 +161,47 @@
                     <label>Kota</label>
                     <input type="text" name="kota" class="kota" placeholder="Kota">
 
-                    <label>No. Telp Rumah</label>
+                    <label>No.Telp Rumah</label>
                     <input type="text" name="norumah" class="norumah" placeholder="Telepon Rumah">
 
-                    <label>No. Handphone</label>
+                    <label>No.Handphone</label>
                     <input type="text" name="nohape" class="nohape" placeholder="Handphone">
 
                     <button type="submit" class="button kanan">Tambah</button>
+                </form>
+            </div>
+        </div> <!-- /pages pagepasienbaru -->
+
+         <!-- Pasien -->
+        <div class="pages" id="pagepasien">
+            <div class="content">
+                <form action="#" method="post" class="formstyle formdone done" accept-charset="utf-8">
+                    <label>Nomor Rekam Medis</label>
+                    <div class="val nomormedis"></div>
+
+                    <label>Nama Lengkap</label>
+                    <div class="val namalengkap"></div>
+
+                    <label>Jenis Kelamin</label>
+                    <div class="val jeniskelamin"></div>
+
+                    <label>Tanggal Lahir</label>
+                    <div class="val tanggallahir"></div>
+
+                    <label>Umur (Tahun)</label>
+                    <div class="val umur"></div>
+
+                    <label>Alamat Rumah</label>
+                    <div class="val alamatrumah"></div>
+
+                    <label>Kota</label>
+                    <div class="val kota"></div>
+
+                    <label>No.Telp Rumah</label>
+                    <div class="val norumah"></div>
+
+                    <label>No.Handphone</label>
+                    <div class="val nohape"></div>
                 </form>
             </div>
         </div> <!-- /pages pagepasienbaru -->

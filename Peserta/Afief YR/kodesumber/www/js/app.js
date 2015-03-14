@@ -7,6 +7,7 @@ var App = function() {
 
 	var pageLogin = new PageLogin($("#pagelogin"));
 	var pageMenu = new PageMenu($("#pagemenu"));
+	var pagePasien = new PagePasien($("#pagepasien"));
 	var pagePasienBaru = new PagePasienBaru($("#pagepasienbaru"));
 	var pageSetting = new PageSetting($("#pagesetting"));
 
@@ -26,9 +27,16 @@ var App = function() {
 	}
 	function bindingEvents() {
 		header.events.on("menuclick", showSideMenu);
+
+		sideMenu.events.on("pengaturan", showPengaturan);
+
 		pageLogin.events.on("login", showMenu);
+
+		pagePasienBaru.events.on("success", showPasien)
+
 		pageMenu.events.on("pasienbaru", showPasienBaru)
 		pageMenu.events.on("pengaturan", showPengaturan);
+
 		pageSetting.events.on("logout", showLogin);
 	}
 	function showSideMenu() {
@@ -42,6 +50,11 @@ var App = function() {
 	function showMenu() {
 		pages.hide();
 		pageMenu.show();
+	}
+	function showPasien(data) {
+		pages.hide();
+		
+		pagePasien.show(data);
 	}
 	function showPasienBaru() {
 		pages.hide();
