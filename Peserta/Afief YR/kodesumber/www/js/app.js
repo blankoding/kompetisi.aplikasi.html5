@@ -53,12 +53,12 @@ var App = function() {
 	}
 	function showPasien(data) {
 		pages.hide();
-		
+
 		pagePasien.show(data);
 	}
 	function showPasienBaru() {
 		pages.hide();
-		header.show("Pasien Baru", "plus");
+		header.show("Pasien Baru", "plus", showMenu);
 		pagePasienBaru.show();
 	}
 	function showPengaturan() {
