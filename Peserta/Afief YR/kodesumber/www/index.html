@@ -26,6 +26,8 @@
     <script type="text/javascript" src="js/pages/menu.js"></script>
     <script type="text/javascript" src="js/pages/pasien.js"></script>
     <script type="text/javascript" src="js/pages/pasienbaru.js"></script>
+    <script type="text/javascript" src="js/pages/caripasien.js"></script>
+    <script type="text/javascript" src="js/pages/hasilpencarian.js"></script>
     <script type="text/javascript" src="js/pages/setting.js"></script>
 
     <script type="text/javascript" src="js/index.js"></script>
@@ -92,7 +94,7 @@
                     <img src="img/logo.png">
                 </div>
 
-                <h2>Login</h2>
+                <h2 style="margin-top: 40px;">Login</h2>
                 <form action="#" method="post" class="formstyle" accept-charset="utf-8">
                     <input type="text" name="username" class="username" value="" placeholder="Username">
                     <input type="password" name="password" class="password" value="" placeholder="Password">
@@ -175,7 +177,41 @@
             </div>
         </div> <!-- /pages pagepasienbaru -->
 
-         <!-- Pasien -->
+        <!-- pencarian pasien !-->
+        <div class="pages" id="pagecaripasien">
+            <div class="content">
+                <h2>Cari Berdasarkan</h2>
+                <form action="#" method="post" class="formstyle formdone" accept-charset="utf-8">
+                    <label>Nomor Rekam Medis</label>
+                    <input type="text" name="nomormedis" class="nomormedis" value="" placeholder="Nomor Rekam Medis">
+
+                    <label>Nama Lengkap</label>
+                    <input type="text" name="namalengkap" class="namalengkap" value="" placeholder="Nama Lengkap">
+
+                    <label>Tanggal Kontrol</label>
+                    <input type="date" name="tanggalkontrol" class="tanggalkontrol">
+
+                    <label>Alamat Rumah</label>
+                    <textarea name="alamatrumah" class="alamatrumah" placeholder="Alamat Rumah"></textarea>
+
+                    <label>Kota</label>
+                    <input type="text" name="kota" class="kota" placeholder="Kota">
+
+                    <button type="submit" class="button big tengah">Cari</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- hasil pencarian !-->
+        <div class="pages" id="pagehasilpencarian">
+            <div class="content">
+                <h2>Hasil Pencarian</h2>
+                <ul class="daftar">
+                </ul>
+            </div>
+        </div>
+
+        <!-- Pasien -->
         <div class="pages" id="pagepasien">
             <div class="content">
                 <form action="#" method="post" class="formstyle formdone done" accept-charset="utf-8">

@@ -1,12 +1,30 @@
+'use strict';
 window.addEventListener("load", onWindowLoaded);
 
 function onWindowLoaded() {
-    document.addEventListener('deviceready', onDeviceReady, false);
+	document.addEventListener('deviceready', onDeviceReady, false);
 }
 
 function onDeviceReady() {
-    var app = new App();
-    app.init();
+	//plugins
+	preparingPlugins();
+
+	//init app
+	var app = new App();
+	app.init();
+}
+
+function preparingPlugins() {
+	//javascript show hide events
+	(function ($) {
+		$.each(['show', 'hide'], function (i, ev) {
+			var el = $.fn[ev];
+			$.fn[ev] = function () {
+				this.trigger(ev);
+				return el.apply(this, arguments);
+			};
+		});
+	})(jQuery);
 }
 
 function serialArrayToObject(ar) {

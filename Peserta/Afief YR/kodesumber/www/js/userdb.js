@@ -2,6 +2,7 @@ var UserDB = function() {
 	var ini = this;
 	var baseUrl = "http://localhost/medisserver/";
 
+	this.events = new ObjectEvents();
 	this.username = "";
 	this.email = "";
 	this.key = "";
@@ -23,7 +24,7 @@ var UserDB = function() {
 			ini.query("user",
 				{key: ini.key},
 				function(data) {
-					console.log(ini.key, data);
+					//console.log(ini.key, data);
 					if (data.status) {
 						ini.username = data.data.username;
 						ini.email = data.data.email;
@@ -100,9 +101,18 @@ var UserDB = function() {
 			method: method,
 			dataType: "json",
 			data: data,
-			success: success,
-			error: failed
+			success: onSuccess,
+			error: onFailed
 		});
+
+		function onSuccess() {
+			ini.events.send("success");			
+			success.apply(this, arguments);
+		}
+		function onFailed() {
+			ini.events.send("failed");
+			failed.apply(this, arguments);
+		}
 	}
 
 
@@ -124,5 +134,21 @@ var UserDB = function() {
 		}
 		);
 	}
+	this.cariPasien = function(data, callback) {
+		data.key = ini.key;
+
+		ini.query("pasien/cari", data,
+		function(data) {
+			console.log("cari pasien", data);
+			if (data.status) {
+				callback(true, data.data);
+			} else {
+				callback(false, data.message);
+			}
+		},
+		function(err) {
+			callback(false, data.message);
+		}
+		);
+	}
 }
-var user = new UserDB();

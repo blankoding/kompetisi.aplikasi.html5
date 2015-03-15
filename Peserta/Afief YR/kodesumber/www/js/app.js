@@ -1,3 +1,4 @@
+var user;
 var App = function() {
 
 	var pages = $(".pages");
@@ -9,11 +10,14 @@ var App = function() {
 	var pageMenu = new PageMenu($("#pagemenu"));
 	var pagePasien = new PagePasien($("#pagepasien"));
 	var pagePasienBaru = new PagePasienBaru($("#pagepasienbaru"));
+	var pageCariPasien = new PageCariPasien($("#pagecaripasien"));
+	var pageHasilPencarian = new PageHasilPencarian($("#pagehasilpencarian"));
 	var pageSetting = new PageSetting($("#pagesetting"));
 
-	pages.hide();
+	hideAll();
 
 	this.init = function() {
+		user = new UserDB();
 		bindingEvents();
 		user.cekLogin(function(res) {
 			if (!res) {
@@ -28,14 +32,24 @@ var App = function() {
 	function bindingEvents() {
 		header.events.on("menuclick", showSideMenu);
 
+		sideMenu.events.on("pasienbaru", showPasienBaru);
+		sideMenu.events.on("caripasien", showCariPasien);
 		sideMenu.events.on("pengaturan", showPengaturan);
 
 		pageLogin.events.on("login", showMenu);
 
-		pagePasienBaru.events.on("success", showPasien)
+		pagePasienBaru.events.on("success", function(dat) {
+			showPasien(dat, showMenu);
+		});
 
-		pageMenu.events.on("pasienbaru", showPasienBaru)
+		pageMenu.events.on("pasienbaru", showPasienBaru);
+		pageMenu.events.on("caripasien", showCariPasien);
 		pageMenu.events.on("pengaturan", showPengaturan);
+
+		pageCariPasien.events.on("success", showHasilPencarian);
+		pageHasilPencarian.events.on("click", function(dat) {
+			showPasien(dat, showHasilPencarian);
+		});
 
 		pageSetting.events.on("logout", showLogin);
 	}
@@ -44,26 +58,43 @@ var App = function() {
 	}
 
 	function showLogin() {
-		pages.hide();
+		hideAll();
 		pageLogin.show();
 	}
 	function showMenu() {
-		pages.hide();
+		hideAll();
 		pageMenu.show();
 	}
-	function showPasien(data) {
-		pages.hide();
-
+	function showPasien(data, back) {
+		hideAll();
+		header.show("Pasien", "plus", back);
 		pagePasien.show(data);
 	}
 	function showPasienBaru() {
-		pages.hide();
+		hideAll();
 		header.show("Pasien Baru", "plus", showMenu);
 		pagePasienBaru.show();
 	}
+	function showCariPasien() {
+		hideAll();
+		header.show("Cari Pasien", "search", showMenu);
+		pageCariPasien.show();
+	}
 	function showPengaturan() {
-		pages.hide();
-		header.show("Pengaturan", "gear");
+		hideAll();
+		header.show("Pengaturan", "gear", showMenu);
 		pageSetting.show();
 	}
+	function showHasilPencarian(data) {
+		hideAll();
+		header.show("Hasil Pencarian", "search", showCariPasien);
+		pageHasilPencarian.show(data);
+	}
+
+	function hideAll() {
+		pages.hide();
+		header.hide();
+		sideMenu.hide();
+	}
+
 }
