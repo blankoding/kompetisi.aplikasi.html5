@@ -1,6 +1,9 @@
-var UserDB = function() {
+var UserDB = function(elLoading) {
 	var ini = this;
 	var baseUrl = "http://localhost/medisserver/";
+
+	if (elLoading)
+		elLoading.hide();
 
 	this.events = new ObjectEvents();
 	this.username = "";
@@ -92,6 +95,10 @@ var UserDB = function() {
 	}
 
 	this.query= function(permalink, data, success, failed, method) {
+		ini.events.send("loading");
+		if (elLoading)
+			elLoading.show();
+
 		method = method || "POST";
 		success = success || function() {};
 		failed = failed || function() {};
@@ -106,12 +113,18 @@ var UserDB = function() {
 		});
 
 		function onSuccess() {
-			ini.events.send("success");			
+			ini.events.send("success");
 			success.apply(this, arguments);
+
+			if (elLoading)
+				elLoading.hide();
 		}
 		function onFailed() {
 			ini.events.send("failed");
 			failed.apply(this, arguments);
+
+			if (elLoading)
+				elLoading.hide();
 		}
 	}
 
@@ -130,7 +143,7 @@ var UserDB = function() {
 			}
 		},
 		function(err) {
-			callback(false, data.message);
+			callback(false, "Koneksi ke server gagal");
 		}
 		);
 	}
@@ -147,7 +160,7 @@ var UserDB = function() {
 			}
 		},
 		function(err) {
-			callback(false, data.message);
+			callback(false, "Koneksi ke server gagal");
 		}
 		);
 	}

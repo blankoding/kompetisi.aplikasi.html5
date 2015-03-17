@@ -17,7 +17,7 @@ var App = function() {
 	hideAll();
 
 	this.init = function() {
-		user = new UserDB();
+		user = new UserDB($(".loading"));
 		bindingEvents();
 		user.cekLogin(function(res) {
 			if (!res) {
@@ -67,7 +67,7 @@ var App = function() {
 	}
 	function showPasien(data, back) {
 		hideAll();
-		header.show("Pasien", "plus", back);
+		header.show("Pasien", "user", back);
 		pagePasien.show(data);
 	}
 	function showPasienBaru() {
@@ -96,5 +96,4 @@ var App = function() {
 		header.hide();
 		sideMenu.hide();
 	}
-
 }
