@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <link rel="stylesheet" type="text/css" href="http://localhost/medis_scss/style.php/style.scss" />
 
-    <script type="text/javascript" src="cordova.js"></script>
+    <!-- <script type="text/javascript" src="cordova.js"></script> -->
     <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 
     <script type="text/javascript" src="js/objectevents.js"></script>
@@ -27,6 +27,7 @@
     <script type="text/javascript" src="js/pages/pasien.js"></script>
     <script type="text/javascript" src="js/pages/pasienbaru.js"></script>
     <script type="text/javascript" src="js/pages/caripasien.js"></script>
+    <script type="text/javascript" src="js/pages/medis.js"></script>
     <script type="text/javascript" src="js/pages/hasilpencarian.js"></script>
     <script type="text/javascript" src="js/pages/setting.js"></script>
 
@@ -65,7 +66,7 @@
                     <button class="button tutup">Tutup</button>
                 </div>
             </div>
-        </div> <!-- Popup !-- >
+        </div> <!-- Popup -->
 
         <div class="sidemenu verticalmenu" id="sidemenu">
             <ul>
@@ -92,7 +93,7 @@
                     <div class="text">Pengaturan</div>
                 </li>
             </ul>
-        </div> <!-- side menu !-->
+        </div> <!-- side menu -->
 
         <div class="pages" id="pagelogin">
             <div class="content">
@@ -183,7 +184,7 @@
             </div>
         </div> <!-- /pages pagepasienbaru -->
 
-        <!-- pencarian pasien !-->
+        <!-- pencarian pasien -->
         <div class="pages" id="pagecaripasien">
             <div class="content">
                 <h2>Cari Berdasarkan</h2>
@@ -208,7 +209,7 @@
             </div>
         </div>
 
-        <!-- hasil pencarian !-->
+        <!-- hasil pencarian -->
         <div class="pages" id="pagehasilpencarian">
             <div class="content">
                 <h2>Hasil Pencarian</h2>
@@ -247,6 +248,57 @@
 
                     <label>No.Handphone</label>
                     <div class="val nohape"></div>
+                </form>
+
+                <div class="buttons_v">
+                    <div class="button" id="btRekamMedis">Data Rekam Medis</div>
+                </div>
+            </div>
+        </div> <!-- /pages pagepasienbaru -->
+
+        <!-- Data Medis -->
+        <div class="pages" id="pagemedis">
+            <div class="content">
+                <form action="#" method="post" class="formstyle formdone" accept-charset="utf-8">
+                    <label>Nomor Rekam Medis</label>
+                    <input type="text" name="nomormedis" class="nomormedis" value="" placeholder="Nomor Rekam Medis">
+
+                    <label>Jenis</label>
+                    <select name="jenis" class="jenis">
+                        <option value="poliklinis">Poliklinis</option>
+                        <option value="operasi">Operasi</option>
+                        <option value="rawat_inap">Rawat Inap</option>
+                    </select>
+
+                    <label>Tanggal Kontrol</label>
+                    <input type="date" name="tanggal" class="tanggal" placeholder=="Tanggal Kontrol">
+
+                    <label>Lokasi Pertemuan</label>
+                    <input type="text" name="lokasi" class="lokasi" placeholder="Lokasi Pertemuan">
+
+                    <label>Diagnosa</label>
+                    <select name="diagnosa_select" class="diagnosa_select">
+                    </select>
+                    
+                    <label>Tindakan</label>
+                    <textarea name="tindakan" class="tindakan"></textarea>
+                    
+                    <label>Keluhan</label>
+                    <textarea name="keluhan" class="keluhan"></textarea>
+
+                    <label>Anamnesa</label>
+                    <textarea name="anamnesa" class="anamnesa"></textarea>
+
+                    <label>Pemeriksaan</label>
+                    <textarea name="pemeriksaan" class="pemeriksaan"></textarea>
+
+                    <label>Pemeriksaan Penunjang</label>
+                    <textarea name="pemeriksaan_penunjang" class="pemeriksaan_penunjang"></textarea>
+
+                    <label>Rencana</label>
+                    <textarea name="rencana" class="rencana"></textarea>
+
+                    <button type="submit" class="button kanan">Tambah</button>
                 </form>
             </div>
         </div> <!-- /pages pagepasienbaru -->

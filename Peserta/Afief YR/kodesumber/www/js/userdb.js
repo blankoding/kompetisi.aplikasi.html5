@@ -1,6 +1,6 @@
 var UserDB = function(elLoading) {
 	var ini = this;
-	var baseUrl = "http://localhost/medisserver/";
+	var baseUrl = "http://putus.in/medisserver/";
 
 	if (elLoading)
 		elLoading.hide();

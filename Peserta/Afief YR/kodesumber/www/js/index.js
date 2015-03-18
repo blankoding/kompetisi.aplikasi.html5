@@ -1,5 +1,6 @@
 'use strict';
 window.addEventListener("load", onWindowLoaded);
+window.onbeforeunload = onBeforeUnload;
 
 function onWindowLoaded() {
 	document.addEventListener('deviceready', onDeviceReady, false);
@@ -12,6 +13,10 @@ function onDeviceReady() {
 	//init app
 	var app = new App();
 	app.init();
+}
+
+function onBeforeUnload() {
+	return "Keluar dari aplikasi?";
 }
 
 function preparingPlugins() {

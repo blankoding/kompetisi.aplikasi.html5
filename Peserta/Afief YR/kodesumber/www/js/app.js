@@ -11,6 +11,7 @@ var App = function() {
 	var pagePasien = new PagePasien($("#pagepasien"));
 	var pagePasienBaru = new PagePasienBaru($("#pagepasienbaru"));
 	var pageCariPasien = new PageCariPasien($("#pagecaripasien"));
+	var pageMedis = new PageMedis($("#pagemedis"));
 	var pageHasilPencarian = new PageHasilPencarian($("#pagehasilpencarian"));
 	var pageSetting = new PageSetting($("#pagesetting"));
 
@@ -40,6 +41,9 @@ var App = function() {
 
 		pagePasienBaru.events.on("success", function(dat) {
 			showPasien(dat, showMenu);
+		});
+		pagePasien.events.on("rekammedis", function() {
+			showMedis();
 		});
 
 		pageMenu.events.on("pasienbaru", showPasienBaru);
@@ -79,6 +83,11 @@ var App = function() {
 		hideAll();
 		header.show("Cari Pasien", "search", showMenu);
 		pageCariPasien.show();
+	}
+	function showMedis() {
+		hideAll();
+		header.show("Data Medis", "stethoscope", showMenu);
+		pageMedis.show();
 	}
 	function showPengaturan() {
 		hideAll();
