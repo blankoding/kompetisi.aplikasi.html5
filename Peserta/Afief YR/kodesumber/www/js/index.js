@@ -3,7 +3,8 @@ window.addEventListener("load", onWindowLoaded);
 window.onbeforeunload = onBeforeUnload;
 
 function onWindowLoaded() {
-	document.addEventListener('deviceready', onDeviceReady, false);
+	//document.addEventListener('deviceready', onDeviceReady, false);
+	onDeviceReady();
 }
 
 function onDeviceReady() {
