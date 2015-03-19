@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <title>Riwayat Medis</title>
+
+    <link rel="stylesheet" type="text/css" href="fa/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost/medis_scss/style.php/style.scss" />
+
+    <!-- <script type="text/javascript" src="cordova.js"></script> -->
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+
+    <script type="text/javascript" src="js/objectevents.js"></script>
+    <script type="text/javascript" src="js/userdb.js"></script>
+
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/pages/header.js"></script>
+    <script type="text/javascript" src="js/pages/sidemenu.js"></script>
+    <script type="text/javascript" src="js/pages/popup.js"></script>
+    <script type="text/javascript" src="js/pages/login.js"></script>
+    <script type="text/javascript" src="js/pages/menu.js"></script>
+    <script type="text/javascript" src="js/pages/pasien.js"></script>
+    <script type="text/javascript" src="js/pages/pasienbaru.js"></script>
+    <script type="text/javascript" src="js/pages/caripasien.js"></script>
+    <script type="text/javascript" src="js/pages/medis.js"></script>
+    <script type="text/javascript" src="js/pages/hasilpencarian.js"></script>
+    <script type="text/javascript" src="js/pages/setting.js"></script>
+
+    <script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header id="header" class="header">
+            <div class="iconpage back">
+                <li class="fa fa-chevron-left"></li>
+            </div>
+            <div class="iconpage icondata">
+                <li class="fa fa-star"></li>
+            </div>
+            <h1>Header</h1>
+            <div class="iconmenu semibutton">
+                <li class="fa fa-bars"></li>
+            </div>
+        </header><!-- /header -->
+
+        <div class="loading">
+            <div class="content">
+                loading
+            </div>
+        </div>
+
+        <div class="popup" id="popup">
+            <div class="alert">
+                <div class="header">
+                    Menu
+                </div>
+                <div class="content">
+                    Data tidak lengkap.
+                </div>
+                <div class="buttons">
+                    <button class="button tutup">Tutup</button>
+                </div>
+            </div>
+        </div> <!-- Popup -->
+
+        <div class="sidemenu verticalmenu" id="sidemenu">
+            <ul>
+                <li class="pasienbaru">
+                    <div class="icon"><i class="fa fa-user-plus"></i></div>
+                    <div class="text">Pasien Baru</div>
+                </li>
+                <li class="caripasien">
+                    <div class="icon"><i class="fa fa-search"></i></div>
+                    <div class="text">Cari Pasien</div>
+                </li>
+                &nbsp;
+                <li class="laporan">
+                    <div class="icon"><i class="fa fa-table"></i></div>
+                    <div class="text">Laporan</div>
+                </li>
+                <li class="datalain">
+                    <div class="icon"><i class="fa fa-database"></i></div>
+                    <div class="text">Data Lain</div>
+                </li>
+                &nbsp;
+                <li class="pengaturan">
+                    <div class="icon"><i class="fa fa-gear"></i></div>
+                    <div class="text">Pengaturan</div>
+                </li>
+            </ul>
+        </div> <!-- side menu -->
+
+        <div class="pages" id="pagelogin">
+            <div class="content">
+                <div class="biglogo">
+                    <img src="img/logo.png">
+                </div>
+
+                <h2 style="margin-top: 40px;">Login</h2>
+                <form action="#" method="post" class="formstyle" accept-charset="utf-8">
+                    <input type="text" name="username" class="username" value="" placeholder="Username">
+                    <input type="password" name="password" class="password" value="" placeholder="Password">
+
+                    <button type="submit" class="button kanan">Login</button>
+                </form>
+            </div>
+        </div> <!-- /pages pagelogin -->
+
+        <div class="pages" id="pagemenu">
+            <div class="content">
+                <div class="biglogo">
+                    <img src="img/logo.png">
+                </div>
+                <div class="verticalmenu utama">
+                    <ul>
+                        <li class="pasienbaru">
+                            <div class="icon"><i class="fa fa-user-plus"></i></div>
+                            <div class="text">Pasien Baru</div>
+                        </li>
+                        <li class="caripasien">
+                            <div class="icon"><i class="fa fa-search"></i></div>
+                            <div class="text">Cari Pasien</div>
+                        </li>
+                        &nbsp;
+                        <li class="laporan">
+                            <div class="icon"><i class="fa fa-table"></i></div>
+                            <div class="text">Laporan</div>
+                        </li>
+                        <li class="datalain">
+                            <div class="icon"><i class="fa fa-database"></i></div>
+                            <div class="text">Data Lain</div>
+                        </li>
+                        &nbsp;
+                        <li class="pengaturan">
+                            <div class="icon"><i class="fa fa-gear"></i></div>
+                            <div class="text">Pengaturan</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div> <!-- /pages pagemenu -->
+
+        <!-- Pasien Baru -->
+        <div class="pages" id="pagepasienbaru">
+            <div class="content">
+                <form action="#" method="post" class="formstyle formdone" accept-charset="utf-8">
+                    <label>Nomor Rekam Medis</label>
+                    <input type="text" name="nomormedis" class="nomormedis" value="" placeholder="Nomor Rekam Medis">
+
+                    <label>Nama Lengkap</label>
+                    <input type="text" name="namalengkap" class="namalengkap" value="" placeholder="Nama Lengkap">
+
+                    <label>Jenis Kelamin</label>
+                    <select name="jeniskelamin" class="jeniskelamin">
+                        <option value="pria">Pria</option>
+                        <option value="wanita">Wanita</option>
+                    </select>
+
+                    <label>Tanggal Lahir</label>
+                    <input type="date" name="tanggallahir" class="tanggallahir">
+
+                    <label>Umur (Tahun)</label>
+                    <input type="number" name="umur" class="umur" value="0">
+
+                    <label>Alamat Rumah</label>
+                    <textarea name="alamatrumah" class="alamatrumah" placeholder="Alamat Rumah"></textarea>
+
+                    <label>Kota</label>
+                    <input type="text" name="kota" class="kota" placeholder="Kota">
+
+                    <label>No.Telp Rumah</label>
+                    <input type="text" name="norumah" class="norumah" placeholder="Telepon Rumah">
+
+                    <label>No.Handphone</label>
+                    <input type="text" name="nohape" class="nohape" placeholder="Handphone">
+
+                    <button type="submit" class="button kanan">Tambah</button>
+                </form>
+            </div>
+        </div> <!-- /pages pagepasienbaru -->
+
+        <!-- pencarian pasien -->
+        <div class="pages" id="pagecaripasien">
+            <div class="content">
+                <h2>Cari Berdasarkan</h2>
+                <form action="#" method="post" class="formstyle formdone" accept-charset="utf-8">
+                    <label>Nomor Rekam Medis</label>
+                    <input type="text" name="nomormedis" class="nomormedis" value="" placeholder="Nomor Rekam Medis">
+
+                    <label>Nama Lengkap</label>
+                    <input type="text" name="namalengkap" class="namalengkap" value="" placeholder="Nama Lengkap">
+
+                    <label>Tanggal Kontrol</label>
+                    <input type="date" name="tanggalkontrol" class="tanggalkontrol">
+
+                    <label>Alamat Rumah</label>
+                    <textarea name="alamatrumah" class="alamatrumah" placeholder="Alamat Rumah"></textarea>
+
+                    <label>Kota</label>
+                    <input type="text" name="kota" class="kota" placeholder="Kota">
+
+                    <button type="submit" class="button big tengah">Cari</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- hasil pencarian -->
+        <div class="pages" id="pagehasilpencarian">
+            <div class="content">
+                <h2>Hasil Pencarian</h2>
+                <ul class="daftar">
+                </ul>
+            </div>
+        </div>
+
+        <!-- Pasien -->
+        <div class="pages" id="pagepasien">
+            <div class="content">
+                <form action="#" method="post" class="formstyle formdone done" accept-charset="utf-8">
+                    <label>Nomor Rekam Medis</label>
+                    <div class="val nomormedis"></div>
+
+                    <label>Nama Lengkap</label>
+                    <div class="val namalengkap"></div>
+
+                    <label>Jenis Kelamin</label>
+                    <div class="val jeniskelamin"></div>
+
+                    <label>Tanggal Lahir</label>
+                    <div class="val tanggallahir"></div>
+
+                    <label>Umur (Tahun)</label>
+                    <div class="val umur"></div>
+
+                    <label>Alamat Rumah</label>
+                    <div class="val alamatrumah"></div>
+
+                    <label>Kota</label>
+                    <div class="val kota"></div>
+
+                    <label>No.Telp Rumah</label>
+                    <div class="val norumah"></div>
+
+                    <label>No.Handphone</label>
+                    <div class="val nohape"></div>
+                </form>
+
+                <div class="buttons_v">
+                    <div class="button" id="btRekamMedis">Data Rekam Medis</div>
+                </div>
+            </div>
+        </div> <!-- /pages pagepasienbaru -->
+
+        <!-- Data Medis -->
+        <div class="pages" id="pagemedis">
+            <div class="content">
+                <form action="#" method="post" class="formstyle formdone" accept-charset="utf-8">
+                    <label>Nomor Rekam Medis</label>
+                    <input type="text" name="nomormedis" class="nomormedis" value="" placeholder="Nomor Rekam Medis">
+
+                    <label>Jenis</label>
+                    <select name="jenis" class="jenis">
+                        <option value="poliklinis">Poliklinis</option>
+                        <option value="operasi">Operasi</option>
+                        <option value="rawat_inap">Rawat Inap</option>
+                    </select>
+
+                    <label>Tanggal Kontrol</label>
+                    <input type="date" name="tanggal" class="tanggal" placeholder=="Tanggal Kontrol">
+
+                    <label>Lokasi Pertemuan</label>
+                    <input type="text" name="lokasi" class="lokasi" placeholder="Lokasi Pertemuan">
+
+                    <label>Diagnosa</label>
+                    <select name="diagnosa_select" class="diagnosa_select">
+                    </select>
+                    
+                    <label>Tindakan</label>
+                    <textarea name="tindakan" class="tindakan"></textarea>
+                    
+                    <label>Keluhan</label>
+                    <textarea name="keluhan" class="keluhan"></textarea>
+
+                    <label>Anamnesa</label>
+                    <textarea name="anamnesa" class="anamnesa"></textarea>
+
+                    <label>Pemeriksaan</label>
+                    <textarea name="pemeriksaan" class="pemeriksaan"></textarea>
+
+                    <label>Pemeriksaan Penunjang</label>
+                    <textarea name="pemeriksaan_penunjang" class="pemeriksaan_penunjang"></textarea>
+
+                    <label>Rencana</label>
+                    <textarea name="rencana" class="rencana"></textarea>
+
+                    <button type="submit" class="button kanan">Tambah</button>
+                </form>
+            </div>
+        </div> <!-- /pages pagepasienbaru -->
+        
+        <!-- Pengaturan -->
+        <div class="pages" id="pagesetting">
+            <div class="content">
+                <div class="verticalmenu utama">
+                    <ul>
+                        <li class="logout">
+                            <div class="icon"><i class="fa fa-sign-out"></i></div>
+                            <div class="text">Logout</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div> <!-- /pages pagesetting -->
+
+    </div>
+</body>
+</html>

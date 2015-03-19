@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.blankon.riwayatmedis" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>RiwayatMedis</name>
+    <description>
+        Aplikasi Android Riwayat Medis
+    </description>
+    <author email="surat@afief.net" href="http://afief.net">
+        Afief Yona Ramadhana
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+</widget>
